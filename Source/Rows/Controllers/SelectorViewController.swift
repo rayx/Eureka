@@ -210,8 +210,8 @@ open class _SelectorViewController<Row: SelectableRowType, OptionsRow: OptionsPr
                 }
             }
         }
-        for (index, option) in options.enumerated() {
-            section <<< Row.init(String(describing: option) + String(index)) { lrow in
+        for (index, _) in options.enumerated() {
+            section <<< Row.init(String(index)) { lrow in
                 lrow.title = self.row.displayValueFor?(option)
                 lrow.selectableValue = option
                 lrow.value = self.row.value == option ? option : nil
